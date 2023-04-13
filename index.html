@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Molecule Viewer</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"> </script>
+  </head>
+  <body>
+	<h1>Molecule Viewer</h1>
+    <div class="container">
+
+        <h1>Add/Remove Elements:</h1>
+            <div id="table-container">
+            </div>
+        <body>
+            <label for="element-number">Element Number:</label>
+            <input type="number" id="element-number" placeholder="i.e: 8" name="element-number" required>
+            <label for="element-code">Element Code:</label>
+            <input type="text" id="element-code" placeholder="i.e: O" name="element-code" required>
+            <label for="element-name">Element Name:</label>
+            <input type="text" id="element-name" placeholder="i.e: Oxygen"element-name" required>
+            <label for="color-1">Color 1:</label>
+            <input type="color" id="color-1" name="color-1" required>
+            <label for="color-2">Color 2:</label>
+            <input type="color" id="color-2" name="color-2" required>
+            <label for="color-3">Color 3:</label>
+            <input type="color" id="color-3" name="color-3" required>
+            <label for="element-radius">Element Radius:</label>
+            <input type="number" placeholder="40" id="element-radius" name="element-radius" required>
+            <body>
+            <button type="submit" id="add-button" >Add Element</button>
+            <!-- <button type="submit2" id="remove-button" onclick="location.reload()">Remove Element</button> -->
+            </body>
+        </body>
+
+        <h1>Upload SDF File:</h1>
+        <form id="upload" method = "post" action = "/sdf_upload" enctype="multipart/form-data">
+            <input type="file" name="uploadFile" accept=".sdf" id="uploadFile" required>
+            <label for="molecule-name">Molecule Name:</label>
+            <input type="text" placeholder="Water" id="molecule-name" name="molecule-name">
+            <button type="submit" id="upload-button" onclick="submitForm(event)" onclick="addMolecule()" >Upload</button>
+        </form>
+
+        <h1>Display Molecule:</h1>
+        <body>
+            <label for="molecule-name">Select a file to display its components:</label>
+
+            <select id="molecule-select" name="molecule-select">
+                <option value="">--Please select a molecule--</option>
+            </select>
+            
+            <button type="submit" id="select-button">Select Molecule</button>
+        </body>
+
+        <h1>Rotate Molecule:</h1>
+        <body>
+            <label for="x-rotation">Rotation around X:</label>
+            <input type="number" id="x-rotation" placeholder="i.e: 10" name="x-rotation" required>
+            <label for="y-rotation">Rotation around Y:</label>
+            <input type="number" id="y-rotation" placeholder="i.e: 20" name="y-rotation" required>
+            <label for="z-rotation">Rotation around Z:</label>
+            <input type="number" id="z-rotation" placeholder="i.e: 30" name="z-rotation" required>
+            <button type="submit" id="rotate-button">Rotate</button>
+        </body>
+        
+    </div>
+    <div class="container2">
+        <h1 id="mol-name"></h1>
+    </div>
+    <div class="container3">
+        <div id="display-molecule">
+        
+        
+        </div>
+    </div>
+
+        <ul id="element-list"></ul>
+        <script src="script.js"></script>
+    </div>
+</body>
+    
+</html>
