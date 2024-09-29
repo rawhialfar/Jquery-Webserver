@@ -1,7 +1,3 @@
-// Name: Rawhi Alfar
-// Class: CIS*2750
-// Date: January 31st, 2023
-// Task: Assignment 1
 #include "mol.h"
 
 
